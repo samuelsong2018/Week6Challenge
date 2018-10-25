@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Transaction History</title>
+</head>
+<body>
+
+<h1>Show Transaction History</h1>
+
+<a href="/">Return to Previous Page</a><br />
+ID# :<span th:text="${account.id}" ></span><br />
+Account# :<span th:text="${account.accountNumber}" ></span><br />
+Action :<span th:text="${account.action}" ></span><br />
+Amount :<span th:text="${account.amount}" ></span><br />
+Reason :<p th:text="${account.reason}" ></p><br />
+
+
+</body>
+</html>

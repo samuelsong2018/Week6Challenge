@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw</title>
+</head>
+<body>
+<h1>Withdraw</h1>
+
+<a href="/">Return to Previous Page</a><br />
+<form action = "#" th:action="@{/}" method="post">
+ID# :<input type="text" th:field="*{id}" />
+    <span th:text="${account.id}" ></span><br />
+
+Account# :<span th:text="${account.accountNumber}" ></span><br />
+Action : <span> Withdraw </span><br />
+Amount :<span th:text="${account.amount}" ></span><br />
+Reason :<p th:text="${account.reason}" ></p><br />
+</form>
+</body>
+</html>

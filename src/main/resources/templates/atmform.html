@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 6 Challenge</title>
+</head>
+<body>
+
+<h1>ATM</h1>
+<a href="/add">Click here to add a transaction. </a><br />
+<table>
+    <tr>
+        <th>ID#</th>
+        <th>Account#</th>
+        <th>Actions</th>
+        <th>Amount</th>
+        <th>Reason</th>
+    </tr>
+    <tr th:each="account : ${accounts}">
+        <td th:text="${account.id}"> </td>
+        <td th:text="${account.accountNumber}"> </td>
+        <td>
+            <a th:href="@{/update/{id}(id=${account.id})}">Deposit</a> - &nbsp;
+            <a th:href="@{/detail/{id}(id=${account.id})}">Withdraw</a> - &nbsp;
+            <a th:href="@{/detail/{id}(id=${account.id})}">Transaction History</a> - &nbsp;
+        </td>
+        <td th:text="${account.amount}"> </td>
+        <td th:text="${account.reason}"> </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Transaction</title>
+</head>
+<body>
+<h1>Create New Transaction</h1>
+
+<a href="/atmform">Return to Previous Page</a><br />
+<form action = "#" 
+      th:action="@{/accountconfirm}" 
+      th:object="${account}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+ID#: <input th:text="${account.id}" ><span th:if ="${#fields.hasErrors('id')}"
+    th:field="*{id}"></span><br />
+Account# :<input th:text="${account.accountNumber}" ><span th:if ="${#fields.hasErrors('id')}" 
+    th:field="*{id}"></span><br />
+Action (Deposit or Withdraw): <input th:text="${account.action}" ><span th:if ="${#fields.hasErrors('id')}"
+    th:field="*{id}"></span><br />
+Amount :<input th:text="${account.amount}" ><span th:if ="${#fields.hasErrors('id')}"
+    th:field="*{id}"></span><br />
+Reason :<input th:text="${account.reason}" ><span th:if ="${#fields.hasErrors('id')}"
+    th:field="*{id}"></span><br />
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
